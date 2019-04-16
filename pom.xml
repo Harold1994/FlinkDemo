@@ -9,6 +9,9 @@
     <version>1.0</version>
     <packaging>jar</packaging>
     <name>flinkdemo</name>
+    <properties>
+        <flink.version>1.8.0</flink.version>
+    </properties>
 
     <build>
         <sourceDirectory>src/main/scala</sourceDirectory>
@@ -78,6 +81,17 @@
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-streaming-scala_2.11</artifactId>
             <version>1.8.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-java</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-streaming-java_2.11</artifactId>
+            <version>${flink.version}</version>
         </dependency>
 
 
