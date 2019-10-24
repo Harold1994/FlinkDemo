@@ -20,7 +20,7 @@ public class WordCount {
         } else {
             System.out.println("Executing WordCount example with default input data set.");
             System.out.println("Use --input to specify file input.");
-            text = env.fromElements(WordCountData.WORDS);
+            text = env.fromElements(flink.streaming.WordCount.WordCountData.WORDS);
         }
 
         DataStream<Tuple2<String, Long>> counter = text
