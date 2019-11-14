@@ -18,27 +18,27 @@ public class WordCountSQL {
                 new WC("Hello", 1)
         );
         tEnv.registerDataSet("WordCount", input, "word, frequency");
-        Table table = tEnv.sqlQuery("select word, SUM(frequency) as frequency from WordCount groupby word");
+        Table table = tEnv.sqlQuery("select word, SUM(frequency) as frequency from WordCount group by word");
         DataSet<WC> result = tEnv.toDataSet(table, WC.class);
         result.print();
     }
 
     public static class WC {
         public String word;
-        public long frequence;
+        public long frequency;
 
         public WC() {}
 
-        public WC(String word, long frequence) {
+        public WC(String word, long frequency) {
             this.word = word;
-            this.frequence = frequence;
+            this.frequency = frequency;
         }
 
         @Override
         public String toString() {
             return "WC{" +
                     "word='" + word + '\'' +
-                    ", frequence=" + frequence +
+                    ", frequence=" + frequency +
                     '}';
         }
     }
